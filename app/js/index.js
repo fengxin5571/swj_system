@@ -67,11 +67,13 @@ $(function() {
                         	break;
                         
                     }
+                    
                     if (k == 0) {
                        $("#main-container1").html(template.render(kk, vv));
                     } else {
-                      
-                      html += template.render(kk, vv);
+                      if(kk!="area"){
+                    	  html += template.render(kk, vv);
+                      }
                       
                     }
                     
