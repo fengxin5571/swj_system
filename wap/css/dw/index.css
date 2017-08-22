@@ -1,0 +1,557 @@
+html, body {
+    position: relative;
+    background: #F7F7F7;
+    overflow-x: hidden;
+}
+/*轮播图*/
+.bannerBox_qty{
+	height: 5rem;
+	position: relative;
+}
+.swiper-container {
+    width:100%;
+	height: 5rem;
+	position: relative;
+	overflow: hidden;
+}
+.swiper-slide {
+    background: #fff;
+}
+.swiper-slide a{
+	width:100%;
+ 	height:100%;
+ 	display: block;
+}
+.swiper-slide img{
+ 	width:100%;
+ 	height:5rem;
+}
+.swiper-pagination-bullet-active{
+	background: transparent !important;
+	border: 2px solid #28C899;
+}
+.swiper-pagination span{
+	width: 0.2rem;
+	height: 0.2rem;
+	border-radius: 50%;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+	bottom: 0px;
+}
+.swiper-pagination-bullet{
+	background: #000;
+	opacity: 1;
+}
+.positionBigBox_qty{
+	width: 6rem;
+	position: absolute;
+	top: 0.56rem;
+	left: 0.2rem;
+	z-index: 2;;
+	padding-bottom: 0.2rem;
+}
+.positionBox_qty{
+	width: 6rem;
+	height: 0.6rem;
+	margin: auto;
+	overflow: hidden;
+	margin-top: 0.1rem;
+}
+.positionImg_qty{
+	width: 0.45rem;
+	height: 0.44rem;
+	background: url(../../images/position_qty.png) no-repeat;
+	background-size: cover;
+	float: left;
+	margin-top: 0.11rem;
+}
+.positionFont_qty{
+	float: left;
+	line-height: 0.6rem;
+	font-size: 0.24rem;
+	color: #fff;
+	margin-left: 0.2rem;
+}
+.info_qty{
+	width: 0.39rem;
+	height: 0.44rem;
+	background: url(../../images/info_qty.png) no-repeat;
+	background-size: cover;
+	float: right;
+	margin-top: 0.11rem;
+}
+.searchInputBox_qty{
+	width: 5rem;
+	height: 0.6rem;
+	margin: auto;
+	overflow: hidden;
+	background: #fff;
+	border-radius: 0.4rem;
+	margin-left: 0.7rem;
+	margin-top: 0.1rem;
+}
+.searchIcon_qty{
+	width: 0.3rem;
+	height: 0.3rem;
+	background: url(../../images/search_qty.png) no-repeat;
+	background-size: cover;
+	margin-top: 0.15rem;
+	margin-left: 0.2rem;
+	float: left;
+}
+.searchInputBox_qty input{
+	width: 4.3rem;
+	height: 0.6rem;
+	float: left;
+	outline: none;
+	border: none;
+	font-size: 0.28rem;
+	margin-left: 0.2rem;
+	letter-spacing: 0.01rem;
+}
+.fixednav{
+	position:fixed;
+	top:0rem;
+	left:0rem;
+	width:100%;
+	background: #71BFC6;
+}
+/*轮播图*/
+/*食维健小列表开始*/
+.swjListBox_qty{
+	width: 6rem;
+	height: 2.06rem;
+	margin: auto;
+	overflow: hidden;
+}
+.swjListBox_qty li{
+	width: 1.2rem;
+	height: 2.06rem;
+	float: left;
+}
+.swjListBox_qty li a{
+	width: 1.2rem;
+	height: 2.06rem;
+	float: left;
+}
+.swjSmallImg_qty{
+	width: 1.05rem;
+	height: 1.05rem;
+	margin: auto;
+	overflow: hidden;
+	background: #fff;
+	margin-top: 0.3rem;
+	border-radius: 50%;
+}
+.swjSmallImg_qty img{
+	width: 1.05rem;
+	height: 1.05rem;
+	border-radius: 50%;
+	float: left;
+}
+.swjSmallFont_qty{
+	width: 1.2rem;
+	margin: auto;
+	overflow: hidden;
+	font-size: 0.28rem;
+	color: #2e2e2e;
+	text-align: center;
+	margin-top: 0.2rem;
+}
+/*食维健小列表结束*/
+/*限时秒杀开始*/
+.timeLimitBox_qty{
+	width: 100%;
+	height: 4.6rem;
+	margin: auto;
+	overflow: hidden;
+	background: #fff;
+	margin-top: 0.2rem;
+}
+.timeLimitTopBox_qty{
+	width: 100%;
+	height: 0.88rem;
+	float: left;
+	border-bottom: 1px solid #ccc;
+}
+.timeLimitTopSmall_qty{
+	width: 6rem;
+	height: 0.88rem;
+	margin: auto;
+	overflow: hidden;
+}
+.time_qty{
+	width: 0.26rem;
+	height: 0.28rem;
+	background: url(../images/time_qty.png) no-repeat;
+	background-size: cover;
+	float: left;
+	margin-top: 0.3rem;
+}
+.timeFont_qty{
+	font-size: 0.28rem;
+	color: #26c898;
+	float: left;
+	line-height: 0.88rem;
+	margin-left: 0.2rem;
+}
+.timeEnd_qty{
+	font-size: 0.2rem;
+	color: #9c9b9b;
+	line-height: 0.88rem;
+	margin-left: 0.4rem;
+	float: left;
+}
+.timeEnd_qty span{
+	margin-left: 0.2rem;
+	letter-spacing: 0.02rem;
+}
+.more_qty{
+	float: right;
+	line-height: 0.88rem;
+	color: #5c5c5c;
+	font-size: 0.2rem;
+}
+.more_qty a{
+	color: #5c5c5c;
+}
+.more_qty a span{
+	width:0; 
+    height:0; 
+    border-top:0.12rem solid transparent;
+    border-bottom: 0.12rem solid transparent;
+    border-left: 0.12rem solid #26c898;
+    float: right;
+    margin-top: 0.3rem;
+    margin-left: 0.1rem;
+}
+.timeLimitSmallBox_qty{
+	width: 6.2rem;
+	height: 3.69rem;
+	float: left;
+	margin-left: 0.2rem;
+}
+.swiper-containerBox {
+    width: 100%;
+    height: 3.69rem;
+}
+.swiper-slide{
+    text-align: center;
+}
+.swiper{
+	height: 3.69rem;
+	width: 2.3rem !important;
+	margin-right: 0.2rem !important;
+	position: relative;
+}
+.swiper a{
+	height: 3.69rem;
+	width: 2.3rem;
+	float: left;
+}
+.productImg_qty{
+	width: 2.02rem;
+	height: 2.02rem;
+	margin: auto;
+	overflow: hidden;
+	margin-top: 0.2rem;
+}
+.productImg_qty img{
+	width: 2.02rem;
+	height: 2.02rem;
+	float: left;
+}
+.swjProductFont_qty{
+	width: 2.3rem;
+	margin: auto;
+	overflow: hidden;
+	font-size: 0.24rem;
+	color: #787878;
+	text-align: center;
+	margin-top: 0.2rem;
+	letter-spacing: 0.02rem;
+}
+.price_qty{
+	width: 2.3rem;
+	margin: auto;
+	overflow: hidden;
+	font-size: 0.24rem;
+	color: #26c898;
+	margin-top: 0.1rem;
+	font-weight: bold;
+}
+.sur_qty{
+	width: 2.3rem;
+	margin: auto;
+	overflow: hidden;
+	font-size: 0.18rem;
+	color: #8a8a8a;
+	margin-top: 0.1rem;
+	letter-spacing: 0.02rem;
+}
+/*限时秒杀结束*/
+/*营养套餐专区开始*/
+.nutritionBox_qty{
+	width: 100%;
+	overflow: hidden;
+	margin: auto;
+	background: #fff;
+	margin-top: 0.2rem;
+	padding-bottom: 0.2rem;
+}
+.nutritionFont_qty{
+	width: 100%;
+	height: 0.9rem;
+	color: #26c898;
+	font-size: 0.32rem;
+	text-align: center;
+	line-height: 0.9rem;
+	letter-spacing: 0.02rem;
+}
+.nutritionBanner_qty{
+	width: 100%;
+	height: 2.4rem;
+	margin: auto;
+	overflow: hidden;
+}
+.nutritionBanner_qty a{
+	width: 100%;
+	height: 2.4rem;
+	float: left;
+}
+.nutritionBanner_qty img{
+	width: 100%;
+	height: 2.4rem;
+	float: left;
+}
+.nutrition_qty{
+	width: 0.29rem;
+	height: 0.29rem;
+	background: url(../images/nutrition_qty.png) no-repeat;
+	background-size: cover;
+	float: left;
+	margin-top: 0.295rem;
+}
+.corresBox_qty{
+	width: 6.2rem;
+	height: 3.18rem;
+	float: left;
+	margin-left: 0.2rem;
+}
+.swiper-containerBoxs{
+	width: 100%;
+    height: 3.18rem;
+}
+.swipers{
+	height: 3.18rem;
+	width: 2.8rem !important;
+	margin-right: 0.05rem !important;
+	position: relative;
+}
+.swipers a{
+	height: 3.18rem;
+	width: 2.8rem;
+	float: left;
+}
+.swipers img{
+	height: 3.18rem;
+	width: 2.8rem;
+	float: left;
+}
+.maskSmall_qty{
+	width: 2.8rem;
+	height: 0.5rem;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	left: 0rem;
+	bottom: 0rem;
+	font-size: 0.28rem;
+	color: #fff;
+	line-height: 0.5rem;
+	text-align: center;
+}
+/*营养套餐专区结束*/
+/*产品上新开始*/
+.productListBox_qty{
+	width: 6rem;
+	height: 2.4rem;
+	margin: auto;
+	overflow: hidden;
+}
+.productListBox_qty li{
+	width: 2rem;
+	height: 2.4rem;
+	float: left;
+	position: relative;
+}
+.productListBox_qty li a{
+	width: 2rem;
+	height: 2.4rem;
+	float: left;
+}
+.productListBox_qty li img{
+	width: 2rem;
+	height: 2.4rem;
+	float: left;
+}
+.productMask_qty{
+	width: 2rem;
+	height: 0.5rem;
+	position: absolute;
+	left: 0rem;
+	bottom: 0rem;
+	background: rgba(0,0,0,0.5);
+	font-size: 0.28rem;
+	color: #fff;
+	line-height: 0.5rem;
+	text-align: center;
+}
+.productnutritionBox_qty{
+	width: 6rem;
+	margin: auto;
+	overflow: hidden;
+}
+.productnutritionBox_qty li{
+	width: 2rem;
+	height: 3rem;
+	float: left;
+}
+.productnutritionBox_qty li a{
+	width: 2rem;
+	height: 2.4rem;
+	float: left;
+}
+.productnutritionBox_qty li:nth-child(even){
+	background: #F9F9F9;
+}
+.productnutritionBox_qty li:nth-child(odd){
+	background: #F3F3F3;
+}
+.swjnutrition1_qty{
+	width: 1.8rem;
+	color: #5b5b5b;
+	font-size: 0.24rem;
+	text-align: left;
+	margin: auto;
+	margin-top: 0.2rem;
+	overflow: hidden;
+	letter-spacing: 0.02rem;
+}
+.health_qty{
+	width: 1.8rem;
+	color: #535353;
+	font-size: 0.2rem;
+	text-align: left;
+	margin: auto;
+	margin-top: 0.05rem;
+	overflow: hidden;
+	letter-spacing: 0.02rem;
+}
+.productnutritionBox_qty li img{
+	width: 2rem;
+	height: 2rem;
+	margin: auto;
+	overflow: hidden;
+	margin-top: 0.2rem;
+}
+.padd_qty{
+	padding-bottom: 1.5rem;
+}
+/*产品上新结束*/
+/*尾部开始*/
+footer{
+	width: 100%;
+	height: 1rem;
+	position: fixed;
+	left: 0rem;
+	bottom: 0rem;
+	background: #fff;
+	z-index: 33;
+}
+.footer_qty{
+	width: 6rem;
+	height: 1rem;
+	margin: auto;
+	overflow: hidden;
+}
+.footer_qty li{
+	width: 1.2rem;
+	height: 1rem;
+	float: left;
+	color: #a2a2a2;
+}
+.footer_qty li .imgBox_qty{
+	width: 0.43rem;
+	height: 0.41rem;
+	margin: auto;
+	overflow: hidden;
+	margin-top: 0.15rem;
+}
+.footer_qty li .imgBox_qty img{
+	width: 0.43rem;
+	height: 0.41rem;
+	float: left;
+	/*display: none;*/
+}
+.footerFont_qty,.footerFont_qty_qty{
+	width: 1.2rem;
+	height: 1rem;
+	float: left;
+	text-align: center;
+	font-size: 0.24rem;
+	margin-top: 0.1rem;
+	/*color: #a2a2a2;*/
+}
+.footer_qty li .imgBox_qty_qty{
+	width: 0.5rem;
+	height: 0.5rem;
+	margin: auto;
+	overflow: hidden;
+	margin-top: 0.08rem;
+}
+.footer_qty li .imgBox_qty_qty img{
+	width: 0.5rem;
+	height: 0.5rem;
+	float: left;
+}
+.color_qty{
+	color: #1DBB8C !important;
+}
+.nctouch-home-nav { background-color: #FFF; position: relative; z-index: 0; border-bottom: solid 0.05rem #EEE;}
+.nctouch-home-nav ul { font-size: 0; overflow: hidden;}
+.nctouch-home-nav li { float: left; width: 25%; height: 1.5rem; padding: 0.5rem 0 0.3rem 0;}
+.nctouch-home-nav li a { display: block; text-align: center;}
+.nctouch-home-nav li span { display: inline-block; width: 1.05rem; height: 1.05rem; margin: 0 auto 0.3rem auto; border-radius: 100%;}
+.nctouch-home-nav-list { background-color: #FFF; position: relative; z-index: 0; border-bottom: solid 0.05rem #EEE;}
+.nctouch-home-nav-list ul { font-size: 0; overflow: hidden;}
+.nctouch-home-nav-list li { float: left; width: 25%; height: 3.7rem; padding: 0.5rem 0 0.3rem 0;}
+.nctouch-home-nav-list li a { display: block; text-align: center;}
+.nctouch-home-nav-list li span { display: inline-block; width: 2.4rem; height: 2.4rem; margin: 0 auto 0.3rem auto; border-radius: 100%;}
+.nctouch-home-nav-list li span { background-color: #9cc813;}
+.nctouch-home-nav-list li span i { display: block; width: 100%; height: 100%; background-position: 50% 50%; background-repeat: no-repeat; background-size: 50%;}
+.nctouch-home-nav-list li:nth-child(1) span i { background-image: url(../../images/browse_list_w.png);}
+.nctouch-home-nav-list li:nth-child(2) span i { background-image: url(../../images/cart_w.png);}
+.nctouch-home-nav-list li:nth-child(3) span i { background-image: url(../../images/member_w.png);}
+.nctouch-home-nav-list li:nth-child(4) span i { background-image: url(../../images/mcc_04_w.png);}
+.nctouch-home-nav-list li:nth-child(5) span i { background-image: url(../../images/browse_list_w.png);}
+.nctouch-home-nav-list li p { display: block; font-size: 0.6rem; line-height: 0.9rem; color: #555;}
+.nctouch-home-nav li:nth-child(1) span { background-color: #FB6E52;}
+.nctouch-home-nav li:nth-child(2) span { background-color: #48CFAE;}
+.nctouch-home-nav li:nth-child(3) span { background-color: #4FC0E8;}
+.nctouch-home-nav li:nth-child(4) span { background-color: #AC92ED;}
+.nctouch-home-nav li:nth-child(5) span { background-color: #FB6E52;}
+.nctouch-home-nav li:nth-child(6) span { background-color: #48CFAE;}
+.nctouch-home-nav li:nth-child(7) span { background-color: #4FC0E8;}
+.nctouch-home-nav li:nth-child(8) span { background-color: #AC92ED;}
+
+.nctouch-home-nav li span i { display: block; width: 100%; height: 100%; background-position: 50% 50%; background-repeat: no-repeat; background-size: 50%;}
+.nctouch-home-nav li:nth-child(1) span i { background-image: url(../../images/browse_list_w.png);}
+.nctouch-home-nav li:nth-child(2) span i { background-image: url(../../images/cart_w.png);}
+.nctouch-home-nav li:nth-child(3) span i { background-image: url(../../images/member_w.png);}
+.nctouch-home-nav li:nth-child(4) span i { background-image: url(../../images/mcc_04_w.png);}
+.nctouch-home-nav li:nth-child(5) span i { background-image: url(../../images/browse_list_w.png);}
+.nctouch-home-nav li:nth-child(6) span i { background-image: url(../../images/cart_w.png);}
+.nctouch-home-nav li:nth-child(7) span i { background-image: url(../../images/member_w.png);}
+.nctouch-home-nav li:nth-child(8) span i { background-image: url(../../images/mcc_04_w.png);}
+
+.nctouch-home-nav li p { display: block; font-size: 0.28rem; line-height: 0.2rem; color: #555;}

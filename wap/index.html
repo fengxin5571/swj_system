@@ -1,0 +1,347 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1" />
+<title>首页</title>
+
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="apple-touch-icon" href="images/touch-icon-iphone.png"/>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="apple-touch-icon" href="images/touch-icon-iphone.png"/>
+<script src="js/dw/rem.js"></script>
+<link rel="stylesheet" href="css/dw/api.css">
+<link rel="stylesheet" href="css/dw/index.css">
+<link rel="stylesheet" href="css/dw/swiper.min.css">
+<script src="js/dw/swiper.min.js"></script>
+<script src="js/dw/jquery.min.js"></script>
+<script src="js/dw/jquery.lazyload.js"></script>
+<script type="text/javascript" src="js/dw/api.js"></script>
+</head>
+<body>
+
+
+ <!-- banner开始 -->
+	    <div class="bannerBox_qty">
+	    	<!--轮播图-->
+			<div class="swiper-container" id="main-container1">
+	            
+	        
+	        </div>
+	        <!-- 按钮 -->
+	        <div class="swiper-pagination"></div>
+	        <!-- 按钮 -->
+	    	</div>
+	    	<div class="navTmp" style="display:none;"></div>
+	    	<div class="positionBigBox_qty">
+		    	<div class="positionBox_qty">
+		    		<div class="positionImg_qty"></div>
+		    		<div class="positionFont_qty">定位地址</div>
+		    		<a href="tmpl/member/chat_list.html" class="info_qty"></a>
+		    	</div>
+		    	<a href="tmpl/search.html">
+		    	<div class="searchInputBox_qty">
+		    	    
+		    		<div class="searchIcon_qty"></div>
+		    		<input type="text" name="" id="" placeholder="搜素商品或品牌">
+		    		
+		    	</div>
+		    	</a>
+	    	</div>
+	    </div>
+	    <!-- banner结束 -->
+<div class="nctouch-home-nav fixed-Width">
+  <ul>
+    <li><a href="tmpl/product_first_categroy.html"><span><i></i></span>
+      <p>分类</p>
+      </a></li>
+    <li><a href="tmpl/member/order_list.html"><span><i></i></span>
+      <p>我的订单</p>
+      </a></li>
+    <li><a href="shop.html"><span><i></i></span>
+      <p>店铺街</p>
+      </a></li>
+    <li><a href="tmpl/member/chat_list.html"><span><i></i></span>
+      <p>消息</p>
+      </a></li>
+     <li><a href="tmpl/member/member.html"><span><i></i></span>
+      <p>我的商城</p>
+      </a></li>
+    <li><a href="tmpl/sarticle_list.html"><span><i></i></span>
+      <p>养生资讯</p>
+      </a></li>
+    <li><a href="tmpl/member/member_asset.html"><span><i></i></span>
+      <p>我的财产</p>
+      </a></li>
+    <li><a href="tmpl/member/views_list.html"><span><i></i></span>
+      <p>我的足迹</p>
+      </a></li>
+  </ul>
+</div>
+<div id="main-container2"></div>
+<script type="text/html" id="adv_list">
+        <div class="swiper-wrapper">
+        <% for (var i in item) { %>
+	    <div class="swiper-slide"><a href="<%= item[i].url %>"><img src="<%= item[i].image %>" alt=""></a></div>
+        <% } %>
+		</div>
+</script>
+<script type="text/html" id="goods1">
+<!-- 限时秒杀开始 -->
+<div class="timeLimitBox_qty">
+	<div class="timeLimitTopBox_qty">
+		<div class="timeLimitTopSmall_qty">
+			<div class="time_qty"></div>
+			<div class="timeFont_qty">限时秒杀</div>
+			<div class="timeEnd_qty" >距结束<span id="sale_end_time" count_down="<%= end_time %>">14:02:52</span></div>
+			<div class="more_qty"><a href="tmpl/product_list.html?xianshi=1">更多产品<span></span></a></div>
+		</div>	
+	</div>
+    <% for (var i in item) { %>
+	<div class="timeLimitSmallBox_qty">
+	  <div class="swiper-containerBox">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide swiper">
+           <a href="tmpl/product_detail.html?goods_id=<%=item[i].goods_id%>">
+           	<div class="productImg_qty">
+           		<img src="<%= item[i].goods_image %>" data-original="./images/product_qty.png" alt="">
+           	</div>
+           	<div class="swjProductFont_qty">/<%= item[i].goods_name %>/</div>
+           	<div class="price_qty">￥<span><%= item[i].goods_promotion_price %></span></div>
+           	<div class="sur_qty">仅剩<%=item[i].goods_storage%>套</div>
+           </a>
+          </div>
+        
+      </div>
+      </div>
+      </div>
+      <% } %>
+      
+</div>
+<!-- 限时秒杀结束 -->
+</script>
+<script type="text/html" id="home1">
+    <div class="nutritionBox_qty">
+    <%if(title) {%>
+    <div class="nutritionFont_qty">/<%= title %>/</div>
+    <%}%>
+	    	<div class="nutritionBanner_qty">
+		    	<a href="<%= url %>">
+		    		<img src="<%= image %>" data-original="./images/packageBanner_qty_64.png" alt="">
+		    	</a>
+	    	</div>
+    </div>
+	
+</script> 
+<script type="text/html" id="goods">
+     <div class="nutritionBox_qty">
+     <!-- 对应症状套餐开始 -->
+	    	<div class="timeLimitTopSmall_qty">
+	    		<div class="nutrition_qty"></div>
+	    		<div class="timeFont_qty"><%=title%></div>
+	    		<div class="more_qty"><a href="tmpl/product_list.html">更多产品<span></span></a></div>
+	    	</div>	
+	    	<div class="corresBox_qty">
+	    		<div class="swiper-containerBoxs">
+	    			<div class="swiper-wrapper">
+                        <% for (var i in item) { %>
+	    				<div class="swiper-slide swipers">
+	    					<a href="tmpl/product_detail.html?goods_id=<%= item[i].goods_id %>">
+	    						<img src="<%= item[i].goods_image %>" data-original="./images/package_qty_72.png" alt="">
+	    						<div class="maskSmall_qty"><%= item[i].goods_name %></div>
+	    					</a>
+	    				</div>
+	    				<% } %>
+	    				
+	    				
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<!-- 对应症状套餐结束 -->
+            </div>
+	
+</script> 
+<script type="text/html" id="goods_self">
+<!-- 产品上新开始 -->
+	    <div class="nutritionBox_qty">
+	    	<ul class="productnutritionBox_qty">
+                <% for(var i in item) {%>
+	    		<li>
+		    		<a href="tmpl/product_detail.html?goods_id=<%= item[i].goods_id %>">
+		    			<div class="swjnutrition1_qty"><%=item[i].goods_name %></div>
+		    			<div class="health_qty">健康伴你左右</div>
+		    			<img src="<%= item[i].goods_image %>" data-original="./images/swjPackage5_qty_110.png" alt="">
+		    		</a>	
+	    		</li>
+	    		<% }%>
+	    	</ul>
+	    </div>
+	    <!-- 产品上新结束 -->
+</script>
+<script type="text/javascript">
+    
+    
+
+	   
+
+	    // 营养套餐专区
+	    var swiper1 = new Swiper('.swiper-containerBoxs', {
+	        slidesPerView: 2.25,
+	        paginationClickable: false,
+	        spaceBetween: 30
+	    });
+
+
+	    // 判断导航banner事件
+	    scrool_qty()
+		function scrool_qty(){
+			var nav=$(".positionBigBox_qty"); //得到导航对象
+			var win=$(window); //得到窗口对象
+			var sc=$(document);//得到document文档对象。
+
+			win.scroll(function(){
+
+			  if(sc.scrollTop()>=0.6){
+
+			    nav.addClass("fixednav"); 
+
+			   $(".navTmp").fadeIn(); 
+
+			  }else{
+			   nav.removeClass("fixednav");
+			   $(".navTmp").fadeOut();
+
+			  }
+
+			})  
+		}
+
+		// // 按需加载
+		$(function() {
+          $("img").lazyload({ 
+                 effect: "fadeIn"
+           });  
+      });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="fix-block-r"> <a href="javascript:void(0);" class="gotop-btn gotop hide" id="goTopBtn"><i></i></a> </div>
+<footer id="footer"></footer>
+
+
+<script type="text/html" id="home2">
+	<div class="nctouch-home-block">
+	<% if (title) { %>
+		<div class="tit-bar"><%= title %></div>
+	<% } %>
+		<ul class="item-pic-l1-r2">
+			<li>
+				<a href="<%= square_url %>"><img src="<%= square_image %>" alt=""></a>
+			</li>
+			<li>
+				<a href="<%= rectangle1_url %>"><img src="<%= rectangle1_image %>" alt=""></a>
+			</li>
+			<li>
+				<a href="<%= rectangle2_url %>"><img src="<%= rectangle2_image %>" alt=""></a>
+			</li>
+		</ul>
+	</div>
+
+</script> 
+<script type="text/html" id="home3">
+	<div class="nctouch-home-block">
+	<% if (title) { %>
+		<div class="tit-bar"><%= title %></div>
+	<% } %>
+		<ul class="item-pic-list">
+		<% for (var i in item) { %>
+			<li>
+				<a href="<%= item[i].url %>"><img src="<%= item[i].image %>" alt=""></a>
+			</li>
+		<% } %>
+		</ul>
+	</div>
+</script> 
+<script type="text/html" id="home4">
+	<div class="nctouch-home-block">
+	<% if (title) { %>
+		<div class="tit-bar"><%= title %></div>
+	<% } %>
+		<ul class="item-pic-l2-r1">
+			<li>
+				<a href="<%= rectangle1_url %>"><img src="<%= rectangle1_image %>" alt=""></a>
+			</li>
+			<li>
+				<a href="<%= rectangle2_url %>"><img src="<%= rectangle2_image %>" alt=""></a>
+			</li>
+			<li>
+				<a href="<%= square_url %>"><img src="<%= square_image %>" alt=""></a>
+			</li>
+		</ul>
+	</div>
+</script> 
+
+
+<script type="text/html" id="goods2">
+	<div class="nctouch-home-block item-goods">
+	<% if (title) { %>
+		<div class="tit-bar"><%= title %></div>
+	<% } %>
+		<ul class="goods-list">
+		<% for (var i in item) { %>
+			<li>
+			<i><div>抢购</div></i>
+			<a href="tmpl/product_detail.html?goods_id=<%= item[i].goods_id %>">
+			<div class="goods-pic"><img src="<%= item[i].goods_image %>" alt=""></div>
+					<dl class="goods-info">
+						<dt class="goods-name"><%= item[i].goods_name %></dt>
+						<dd class="goods-price">￥<em><%= item[i].goods_promotion_price %></em><i class="list-price">￥<%= item[i].goods_price %></i></dd>
+					</dl>
+			</a>
+				</li>
+			
+		<% } %>
+		</ul>
+	</div>
+</script>
+<script type="text/javascript" src="js/config.js"></script> 
+<script type="text/javascript" src="js/zepto.min.js"></script> 
+<script type="text/javascript" src="js/template.js"></script> 
+<script type="text/javascript" src="js/common.js"></script> 
+<script type="text/javascript" src="js/index.js"></script> 
+
+
+
+</body>
+</html>

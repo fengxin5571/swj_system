@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" href="../css/dw/api.css">
+
+    <script src="../js/dw/jquery.min.js"></script>
+    <script src="../js/dw/rem.js"></script>
+    <style>
+        body,html{
+            background: #f5f5f5;
+            overflow-x: hidden;
+        	
+        }
+        .stock_box_zn{
+            background: #20c4b3;
+            height:0.88rem;
+            width:100%;
+            position:fixed;
+            top:0;
+            left:0;
+            overflow: hidden;
+        }
+        .stock_zn{
+            color:#fff;
+            font-size: .3rem;
+            height:100%;
+            line-height: .88rem;
+            text-align: center;
+            letter-spacing: 0.01rem;
+        }
+        .icon_zn{
+            width: 0.4rem;
+            height: 0.4rem;
+            position: absolute;
+            left: 0.15rem;
+            top: 0.25rem;
+            background: url("../images/my_order_zn.png") no-repeat;
+            background-size: cover;
+        }
+        .detail_box_zn{
+            height:auto;
+            margin-top:0.88rem;
+            margin-bottom:0.4rem;
+            overflow: hidden;
+        	font-size: 22px !important;
+        	padding: 0 0.2rem 0 0.2rem;
+        }
+        .detail_box_zn img{
+		  width:100%;
+          
+        }
+        .xiantiao_zn{
+            width:5.8rem;
+            border-bottom:0.01rem solid #dedede;
+            margin:0 auto;
+        }
+        .relative_recommend_zn{
+            width:100%;
+            height:auto;
+            margin-top:0.3rem;
+        }
+        .relative_title_zn{
+            width:5.8rem;
+            height:0.3rem;
+            line-height:0.3rem;
+            font-size:0.26rem;
+            margin: 0 auto;
+            color:#1dbb8c;
+            letter-spacing: 0.02rem;
+        }
+        .relative_recommend_box{
+            width:100%;
+            height:auto;
+            border-bottom: 0.5rem;
+        }
+        .relative_recommend_list{
+            padding-top:0.3rem;
+            padding-left:0.3rem;
+            padding-right:0.3rem;
+        }
+        .relative_recommend_list img{
+            width:1.13rem;
+            height:0.76rem;
+            border-radius: 0.05rem;
+            display:block ;
+            float:left;
+        }
+        .relative_box{
+            width:100%;
+            height:0.76rem;
+            overflow: hidden;
+        }
+        .relative_con_zn{
+            width:4.2rem;
+            height:100%;
+            float:left;
+            margin-left:0.2rem;
+        }
+        .relative_title{
+            width:100%;
+            height:0.23rem;
+            line-height:0.23rem;
+            font-size:0.22rem;
+            color:#4c4c4c;
+        }
+        .relative_title a{
+	        color: #4c4c4c;
+        }
+        .relative_con{
+            width:100%;
+            height:0.2rem;
+            line-height:0.2rem;
+            font-size:0.18rem;
+            color:#9c9c9c;
+            overflow: hidden;
+            margin-top:0.12rem;
+        }
+        .time_zn{
+            width:100%;
+            height:0.2rem;
+            line-height:0.2rem;
+            font-size:0.12rem;
+            color:#c2c2c2;
+        	margin-top: 0.2rem;
+        }
+        .relative_box span{
+            display: block;
+            float: right;
+            width:0.17rem;
+            height:0.25rem;
+            background: url('/../images/image_zn/click_enter_detail_zn.png');
+            background-size:cover;
+        }
+        .xiantiao_zn_2{
+            width:5.8rem;
+            border-bottom:0.01rem solid #dedede;
+            margin-top:0.3rem;
+        }
+    </style>
+</head>
+<body>
+<div class="stock_box_zn">
+    <div class="stock_zn">资讯详情</div>
+    <div class="icon_zn" onClick="javascript:history.go(-1)"></div>
+</div>
+<div class="detail_box_zn"></div>
+<hr class="xiantiao_zn"/>
+<div class="relative_recommend_zn">
+    
+</div>
+<script type="text/html" id="article_list">
+    <p class="relative_title_zn">相关推荐</p>
+    <ul class="relative_recommend_box">
+        <% for(var i=0;i<article_list.length;i++){%>
+        <li class="relative_recommend_list">
+            <div class="relative_box">
+                 <% if(article_list[i].file_name) {%>
+        		<img src="/data/upload/shop/article/<%=article_list[i].file_name%>" alt=""/>
+        		<%}else {%>
+        		<img src="/data/upload/shop/common/loading.gif" alt=""/>
+        		<%}%>
+                <div class="relative_con_zn">
+                    <p class="relative_title"><a href="../tmpl/sarticle_show.html?article_id=<%=article_list[i].article_id%>"><%=article_list[i].article_title.substr(0,20)%></a></p>
+                    
+                    <p class="time_zn"><%=article_list[i].article_time%></p>
+                </div>
+                <span></span>
+            </div>
+            <hr class="xiantiao_zn_2"/>
+        </li>
+       <%}%>
+    </ul>
+</script>
+<script type="text/javascript" src="../js/dw/api.js"></script>
+<script type="text/javascript" src="../js/config.js"></script> 
+<script type="text/javascript" src="../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../js/template.js"></script> 
+<script type="text/javascript" src="../js/common.js"></script> 
+<script type="text/javascript" src="../js/tmpl/sarticle_show.js"></script>
+</body>
+</html>

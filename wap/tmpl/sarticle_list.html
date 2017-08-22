@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>养生资讯</title>
+    <link rel="stylesheet" href="../css/dw/api.css">
+    <script src="../js/dw/jquery.min.js"></script>
+    <script src="../js/dw/rem.js"></script>
+    <style>
+        body,html{
+            background: #f5f5f5;
+            overflow-x: hidden;
+        }
+        .stock_box_zn{
+            background: #20c4b3;
+            height:0.88rem;
+            width:100%;
+            position:fixed;
+            top:0;
+            left:0;
+            overflow: hidden;
+        }
+        .stock_zn{
+            color:#fff;
+            font-size: .3rem;
+            height:100%;
+            line-height: .88rem;
+            text-align: center;
+            letter-spacing: 0.01rem;
+        }
+        .icon_zn{
+            width: 0.4rem;
+            height: 0.4rem;
+            position: absolute;
+            left: 0.15rem;
+            top: 0.25rem;
+            background: url("../images/my_order_zn.png") no-repeat;
+            background-size: cover;
+        }
+        .consult_box_zn{
+            width:100%;
+            height:auto;
+            margin-top:0.88rem;
+            margin-bottom:1rem;
+        }
+        .consult_list_zn{
+            width:100%;
+            height:1.93rem;
+            box-sizing: border-box;
+            padding-top: 0.3rem;
+            padding-left:0.15rem;
+            padding-right:0.15rem;
+        }
+        .consult_list_zn img{
+            display: block;
+            float:left;
+            width:1.98rem;
+            height:1.31rem;
+            border-radius: 0.05rem;
+        }
+        .product_con_zn{
+            float:left;
+            width:3.8rem;
+            height:1.31rem;
+            margin-left:0.2rem;
+        }
+        .product_title_zn{
+            width:100%;
+            height:0.3rem;
+            line-height:0.3rem;
+            font-size:0.24rem;
+            color:#404040;
+            letter-spacing: 0.02rem;
+        }
+        .product_title_zn a{
+	        color:#404040;
+        }
+        .product_con_zn_zn{
+            font-size:0.2rem;
+            line-height:0.3rem;
+            height:0.6rem;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-top:0.15rem;
+            color:#676666;
+            letter-spacing: 0.03rem;
+        }
+        .time_zn{
+            width: 100%;
+            height:0.25rem;
+            line-height:0.25rem;
+            font-size:0.12rem;
+            color:#bababa;
+        }
+        .xiantiao_zn{
+            display: block;
+            border-bottom:0.01rem solid #dadada;
+            margin-top:1.62rem;
+        }
+    </style>
+</head>
+<body>
+<div class="stock_box_zn">
+    <div class="stock_zn">资讯列表</div>
+    <div class="icon_zn" onClick="javascript:history.go(-1)"></div>
+</div>
+<ul class="consult_box_zn" id="article_list_show">
+    
+</ul>
+<script type="text/html" id="article-list">
+   <%for(var i=0;i<article_list.length;i++) {%>
+   <li class="consult_list_zn">
+        <% if(article_list[i].file_name) {%>
+        <img src="/data/upload/shop/article/<%=article_list[i].file_name%>" alt=""/>
+        <%}else {%>
+        <img src="/data/upload/shop/common/loading.gif" alt=""/>
+        <%}%>
+        <div class="product_con_zn">
+            <p class="product_title_zn"><a href="../tmpl/sarticle_show.html?article_id=<%=article_list[i].article_id%>"><%=article_list[i].article_title.substr(0,14)%></a></p>
+            <p class="product_con_zn_zn"><%=article_list[i].article_content%>...</p>
+            <p class="time_zn"><%=article_list[i].article_time%></p>
+        </div>
+        
+        <hr class="xiantiao_zn"/>
+    </li>
+    <%}%>
+</script>
+<script type="text/javascript" src="../js/dw/api.js"></script>
+<script type="text/javascript" src="../js/config.js"></script> 
+<script type="text/javascript" src="../js/zepto.min.js"></script> 
+<script type="text/javascript" src="../js/template.js"></script> 
+<script type="text/javascript" src="../js/common.js"></script> 
+<script type="text/javascript" src="../js/tmpl/sarticle_list.js"></script>
+</body>
+</html>

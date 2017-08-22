@@ -1,0 +1,7 @@
+{
+  "name" : "SWJ_system",
+  "repositories" : [ {
+    "type" : "composer",
+    "url" : "https://packagist.org/"
+  } ]
+}
