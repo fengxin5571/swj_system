@@ -54,7 +54,6 @@ $(function() {
                             vv.rectangle2_url = buildUrl(vv.rectangle2_type, vv.rectangle2_data);
                             break;
                         case 'nav_list':
-                        	
                         	$.each(vv.nav,function(k3,v3){
                         	  if(v3.nav_type==2){//如果是文章类型导航
                         		  vv.nav[k3].nav_url=buildUrl(v3.nav_type,v3.item_id);
@@ -63,6 +62,9 @@ $(function() {
                         	  }
                         	});
                             break;
+                        case "area":
+                        	$(".positionFont_qty").html(vv.city);
+                        	break;
                         
                     }
                     if (k == 0) {
@@ -72,10 +74,12 @@ $(function() {
                       html += template.render(kk, vv);
                       
                     }
+                    
                     return false;
                 });
             });
            
+            
             $("#main-container2").html(html);
             $('.swiper-container').each(function(){
             	// banner按钮

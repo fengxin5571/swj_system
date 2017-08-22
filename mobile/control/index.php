@@ -20,9 +20,15 @@ class indexControl extends mobileHomeControl{
      * 首页
      */
 	public function indexOp() {
+	    $area=new ip_area();
+	    $ip=getIp()?getIp():"127.0.0.1";
+	    $city_name=$area->getcity($ip);
+	    if($city_name[city]=="LAN"){
+	        $city_name['city']="太原市";
+	    }
         $model_mb_special = Model('mb_special'); 
         $data = $model_mb_special->getMbSpecialIndex();
-        
+        $data[]['area']=$city_name;
         $this->_output_special($data, $_GET['type']);
        
 	}

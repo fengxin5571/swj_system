@@ -36,5 +36,18 @@ class areaControl extends mobileHomeControl{
         $area_list = $model_area->getAreaList($condition, 'area_id,area_name');
         output_data(array('area_list' => $area_list));
     }
+    /*
+     * 找营养初始化地图
+     */
+    public function get_cityOp(){
+        $area=new ip_area();
+        $ip=getIp()?getIp():"127.0.0.1";
+        $city_name=$area->getcity($ip);
+        if($city_name[city]=="LAN"){
+            $city_name['city']="太原市";
+        }
+        
+       
+    } 
 
 }
