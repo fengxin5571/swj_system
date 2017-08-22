@@ -256,85 +256,9 @@
 
 
 
-<div class="fix-block-r"> <a href="javascript:void(0);" class="gotop-btn gotop hide" id="goTopBtn"><i></i></a> </div>
-<footer id="footer"></footer>
 
 
-<script type="text/html" id="home2">
-	<div class="nctouch-home-block">
-	<% if (title) { %>
-		<div class="tit-bar"><%= title %></div>
-	<% } %>
-		<ul class="item-pic-l1-r2">
-			<li>
-				<a href="<%= square_url %>"><img src="<%= square_image %>" alt=""></a>
-			</li>
-			<li>
-				<a href="<%= rectangle1_url %>"><img src="<%= rectangle1_image %>" alt=""></a>
-			</li>
-			<li>
-				<a href="<%= rectangle2_url %>"><img src="<%= rectangle2_image %>" alt=""></a>
-			</li>
-		</ul>
-	</div>
 
-</script> 
-<script type="text/html" id="home3">
-	<div class="nctouch-home-block">
-	<% if (title) { %>
-		<div class="tit-bar"><%= title %></div>
-	<% } %>
-		<ul class="item-pic-list">
-		<% for (var i in item) { %>
-			<li>
-				<a href="<%= item[i].url %>"><img src="<%= item[i].image %>" alt=""></a>
-			</li>
-		<% } %>
-		</ul>
-	</div>
-</script> 
-<script type="text/html" id="home4">
-	<div class="nctouch-home-block">
-	<% if (title) { %>
-		<div class="tit-bar"><%= title %></div>
-	<% } %>
-		<ul class="item-pic-l2-r1">
-			<li>
-				<a href="<%= rectangle1_url %>"><img src="<%= rectangle1_image %>" alt=""></a>
-			</li>
-			<li>
-				<a href="<%= rectangle2_url %>"><img src="<%= rectangle2_image %>" alt=""></a>
-			</li>
-			<li>
-				<a href="<%= square_url %>"><img src="<%= square_image %>" alt=""></a>
-			</li>
-		</ul>
-	</div>
-</script> 
-
-
-<script type="text/html" id="goods2">
-	<div class="nctouch-home-block item-goods">
-	<% if (title) { %>
-		<div class="tit-bar"><%= title %></div>
-	<% } %>
-		<ul class="goods-list">
-		<% for (var i in item) { %>
-			<li>
-			<i><div>抢购</div></i>
-			<a href="tmpl/product_detail.html?goods_id=<%= item[i].goods_id %>">
-			<div class="goods-pic"><img src="<%= item[i].goods_image %>" alt=""></div>
-					<dl class="goods-info">
-						<dt class="goods-name"><%= item[i].goods_name %></dt>
-						<dd class="goods-price">￥<em><%= item[i].goods_promotion_price %></em><i class="list-price">￥<%= item[i].goods_price %></i></dd>
-					</dl>
-			</a>
-				</li>
-			
-		<% } %>
-		</ul>
-	</div>
-</script>
 <script type="text/javascript" src="js/config.js"></script> 
 <script type="text/javascript" src="js/zepto.min.js"></script> 
 <script type="text/javascript" src="js/template.js"></script> 
