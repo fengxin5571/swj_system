@@ -58,6 +58,7 @@ class areaControl extends mobileHomeControl{
         $own_store_list = $store_list;
         $simply_store_list = array();
         foreach ($own_store_list as $key => $value) {
+			$simply_store_list[$key]['store_id'] = $own_store_list[$key]['store_id'];
             $simply_store_list[$key]['store_name'] = $own_store_list[$key]['store_name'];
             $simply_store_list[$key]['store_address'] = $own_store_list[$key]['store_address'];
             $simply_store_list[$key]['live_store_address'] = $own_store_list[$key]['live_store_address'];

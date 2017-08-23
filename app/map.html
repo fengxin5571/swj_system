@@ -8,20 +8,117 @@
     #allmap{width:100%;height:100%;}
     p{margin-left:5px; font-size:14px;}
   </style>
-  <script type="text/javascript" src="ihttp://api.map.baidu.com/api?v=2.0&ak=cWVfWssKBdVtcbH85hzFcOrgPsUOVswf"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=cWVfWssKBdVtcbH85hzFcOrgPsUOVswf"></script>
   <script type="text/javascript" src="js/config.js"></script> 
   <script type="text/javascript" src="js/zepto.min.js"></script> 
+  <script type="text/javascript" src="js/zepto.min.js"></script> 
+  <script src="js/dw/rem.js"></script>
   <title>找营养</title>
 </head>
 <body>
+<style>
+        body{
+            background: #666;
+			font-size:0.22rem;
+        }
+        .ceng_yyt{
+            width: 6rem;
+            height: auto;
+            border-radius: 0.1rem;
+            overflow: hidden;
+            margin: 0 auto;
+            position: fixed;
+            left: 0.2rem;
+            bottom: 0.2rem;
+            background: #fff;
+            padding: 0.15rem 0.1rem;
+            box-sizing: border-box;
+			display:none;
+        }
+        .address_yyt{
+            width: 5.8rem;
+            height: 0.4rem;
+            font-size: 0.23rem;
+            line-height: 0.4rem;
+            border-radius: 0.05rem;
+            color: #333;
+            background: #ccc;
+            padding: 0 0.2rem;
+            box-sizing: border-box;
+        }
+        .address_yyt_{
+            width: 5.8rem;
+            height: 0.5rem;
+            font-size: 0.22rem;
+            line-height: 0.5rem;
+            border-radius: 0.05rem;
+            color: #333;
+            padding: 0 0.2rem;
+            box-sizing: border-box;
+        }
+        .add_yyt{
+            width: auto;
+            height: 100%;
+            float: left;
+        }
+        .juli_yyt{
+            width: auto;
+            height: 100%;
+            float: right;
+        }
+        .two_yyt{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .two_a{
+            width: 2.7rem;
+            height: 1rem;
+            float: left;
+            border-radius: 0.1rem;
+            border: 0.01rem solid #333;
+            box-sizing: border-box;
+            margin: 0 0.1rem;
+            font-size: 0.26rem;
+            line-height: 1rem;
+            color: #333;
+            text-align: center;
+            text-decoration: none;
+        }
+        .two_b{
+            width: 2.7rem;
+            height: 1rem;
+            float: left;
+            border-radius: 0.1rem;
+            background: #71BFC6;
+            margin: 0 0.1rem;
+            font-size: 0.26rem;
+            line-height: 1rem;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+        }
+    </style>
   <div id="allmap"></div>
+  <div class="ceng_yyt">
+		<div class="address_yyt"></div>
+		<div class="address_yyt_">
+			<div class="add_yyt"></div>
+			<div class="juli_yyt">253KM</div>
+		</div>
+		<div class="two_yyt">
+			<a href="tmpl/product_list.html" class="two_a">食维健商城</a>
+			<a href="" class="two_b">找最近门店</a>
+		</div>
+	</div>
 </body>
 </html>
 <script  type="text/javascript">
 function baidu_init(init_city) {//初始化地图
 	  // 百度地图API功能
 	  map = new BMap.Map("allmap");
-	  map.centerAndZoom(init_city, 15);
+	  map.centerAndZoom(init_city, 14);
 	  // 添加带有定位的导航控件
 	  var navigationControl = new BMap.NavigationControl({
 	    // 靠左上角位置
@@ -32,15 +129,50 @@ function baidu_init(init_city) {//初始化地图
 	    enableGeolocation: true
 	  });
 	  map.addControl(navigationControl);
+	  
 }
+
+
+
 //添加多个店铺位置点函数
-function addMarker(point){
-	  var marker = new BMap.Marker(point);
-	  map.addOverlay(marker);
+function addMarker(address,store_name,store_tel,k){
+     // 创建地址解析器实例
+	var myGeo = new BMap.Geocoder();
+	// 将地址解析结果显示在地图上,并调整地图视野
+	myGeo.getPoint(address, function(point){
+		if (point) {
+		//创建店铺图标
+		
+		var pt = new BMap.Point(point.lng,point.lat);
+		var myIcon = new BMap.Icon("http://app.shiweijian.com.cn/app/images/store.png", new BMap.Size(20,120));
+		var marker2 = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+		map.addOverlay(marker2); 
+		var label = new BMap.Label((k+1)+"号门店",{offset:new BMap.Size(-10,-22)});
+	    marker2.setLabel(label);
+        var content="地址: "+address+"<br>电话: "+store_tel;
+        var opts = {
+		  width : 100,     // 信息窗口宽度
+		  height: 100,     // 信息窗口高度
+		  title : store_name , // 信息窗口标题
+		  
+		}
+		var infoWindow = new BMap.InfoWindow(content, opts);  // 创建信息窗口对象 
+		marker2.addEventListener("click", function(){          
+			map.openInfoWindow(infoWindow,point); //开启信息窗口
+		});
+		}else{
+			alert("您选择地址没有解析到结果!");
+		}
+	});
+	
 }
+
 </script>
+
+
 <script type="text/javascript">
 var map;
+var distance_list=[];
 $(function(){
 	$.ajax({
 		url:ApiUrl+"/index.php?act=area&op=init_map",
@@ -50,39 +182,90 @@ $(function(){
 		success:function(result){
 			var data = result.datas;
 			baidu_init(data.area.city);
+	
+			// 添加定位控件
+			var geolocationControl = new BMap.GeolocationControl();
+			geolocationControl.addEventListener("locationSuccess", function(e){
+			map.setZoom(14); 
+			// 定位成功事件
+			//alert(e.point.lng+","+e.point.lat);
 			
-			//var html = template.render('article-list', data);				
+			var pointA = new BMap.Point(e.point.lng,e.point.lat);  // 创建点坐标A
+			distance_list=Array();
+			$.each(data.store_list,function(k,v){
+			      
+				  var myGeo = new BMap.Geocoder();
+				   myGeo.getPoint(v.live_store_address, function(point){
+						if (point) {
+							distance_list.push({store_id:v.store_id,dis:parseFloat(get_distance(point,pointA)),store_name:v.store_name});
+								
+							
+						}else{
+							alert("您选择地址没有解析到结果!");
+						}
+	                    
+					});
+   
+			});
+			
+			function yyt() {
+				var a = setInterval(function(){
+				   if (distance_list){
+				       
+					   console.log(distance_list.sort(compare('dis'))[0]);
+					   var address = '';
+						address += e.addressComponent.province;
+						address += e.addressComponent.city;
+						address += e.addressComponent.district;
+						address += e.addressComponent.street;
+						address += e.addressComponent.streetNumber;
+						$(".address_yyt").html(address);
+						$(".add_yyt").html(distance_list.sort(compare('dis'))[0].store_name);
+						$(".juli_yyt").html("距离："+distance_list.sort(compare('dis'))[0].dis+"KM");
+					    $('.two_b').attr("href","tmpl/store.html?store_id="+distance_list.sort(compare('dis'))[0].store_id);
+						$(".ceng_yyt").show();
+					    clearInterval(a)
+				   }
+				},180)
+			}
+			yyt();
+		  });
+		  geolocationControl.addEventListener("locationError",function(e){
+			// 定位失败事件
+			alert(e.message);
+		  });
+		  map.addControl(geolocationControl);
+			//获取所有店铺的点
+			$.each(data.store_list,function(k,v){
+		       addMarker(v.live_store_address,v.store_name,v.live_store_tel,k);
+		    });	
+			
+		  
 			
 		}
 	});
 });
 </script>
 <script type="text/javascript">
-  
+ //获取所有门店到定位的距离
+function get_distance(point,pointA){
+	if (point) {
+		var pointB = new BMap.Point(point.lng,point.lat);  // 创建点坐标B
+		
+		return ((map.getDistance(pointA,pointB)).toFixed(0)/1000).toFixed(2);
+	}else{
+		alert("您选择地址没有解析到结果!");
+		return 0;
+	}	
  
-  //单击获取点击的经纬度
-  map.addEventListener("click",function(e){
-       var marker = new BMap.Marker(new BMap.Point(e.point.lng,e.point.lat));
-	    map.addOverlay(marker);
-	});
+}
+function compare(property){
+    return function(a,b){
+        var value1 = a[property];
+        var value2 = b[property];
+        return value1 - value2;
+    }
+}
   
-	
-  // 添加定位控件
-  var geolocationControl = new BMap.GeolocationControl();
-  geolocationControl.addEventListener("locationSuccess", function(e){
-    // 定位成功事件
-	alert(e.point.lng+","+e.point.lat);
-    var address = '';
-    address += e.addressComponent.province;
-    address += e.addressComponent.city;
-    address += e.addressComponent.district;
-    address += e.addressComponent.street;
-    address += e.addressComponent.streetNumber;
-    alert("当前定位地址为：" + address);
-  });
-  geolocationControl.addEventListener("locationError",function(e){
-    // 定位失败事件
-    alert(e.message);
-  });
-  map.addControl(geolocationControl);
+  
 </script>
