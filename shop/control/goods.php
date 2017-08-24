@@ -82,7 +82,6 @@ class goodsControl extends BaseGoodsControl {
         }
         Tpl::output('goods', $goods_info);
 		
-		
 		//v3-b11 抢购商品是否开始
 		$IsHaveBuy=0;
 		if(!empty($_SESSION['member_id']))

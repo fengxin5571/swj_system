@@ -541,6 +541,7 @@ class store_goods_onlineControl extends BaseSellerControl {
                 }
                 $update['is_own_shop']       = $update_common['is_own_shop'];
                 $model_goods->editGoodsById($update, $goods_id);
+				
 		 // 生成商品二维码
                     $PhpQRCode->set('date',WAP_SITE_URL . '/tmpl/product_detail.html?goods_id='.$goods_id);
                     $PhpQRCode->set('pngTempName', $goods_id . '.png');
@@ -609,6 +610,7 @@ class store_goods_onlineControl extends BaseSellerControl {
         $model_goods->delGoodsImages(array('goods_commonid' => $common_id, 'color_id' => array('not in', $colorid_array)));
         // 更新商品默认主图
         $default_image_list = $model_goods->getGoodsImageList(array('goods_commonid' => $common_id, 'is_default' => 1), 'color_id,goods_image');
+		
         if (!empty($default_image_list)) {
             foreach ($default_image_list as $val) {
                 $model_goods->editGoods(array('goods_image' => $val['goods_image']), array('goods_commonid' => $common_id, 'color_id' => $val['color_id']));
