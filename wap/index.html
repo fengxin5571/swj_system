@@ -104,10 +104,11 @@
 			<div class="more_qty"><a href="tmpl/product_list.html?xianshi=1">更多产品<span></span></a></div>
 		</div>	
 	</div>
-    <% for (var i in item) { %>
+    
 	<div class="timeLimitSmallBox_qty">
 	  <div class="swiper-containerBox">
       <div class="swiper-wrapper">
+	      <% for (var i in item) { %>
           <div class="swiper-slide swiper">
            <a href="tmpl/product_detail.html?goods_id=<%=item[i].goods_id%>">
            	<div class="productImg_qty">
@@ -118,11 +119,11 @@
            	<div class="sur_qty">仅剩<%=item[i].goods_storage%>套</div>
            </a>
           </div>
-        
+         <% } %>
       </div>
       </div>
       </div>
-      <% } %>
+      
       
 </div>
 <!-- 限时秒杀结束 -->
